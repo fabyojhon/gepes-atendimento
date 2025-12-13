@@ -14,13 +14,13 @@
             display: flex;
             flex-direction: column; 
             align-items: center;
-            overflow-x: hidden; /* Evita rolagem lateral indesejada */
+            overflow-x: hidden;
         }
 
         /* --- CABEÇALHO --- */
         .header-container {
             width: 100%;
-            max-width: 800px; /* Limite máximo no PC */
+            max-width: 800px;
             text-align: left;
             margin-top: 30px;
             z-index: 50; 
@@ -31,7 +31,7 @@
 
         h1 {
             color: #f1c40f; 
-            font-size: clamp(1.8rem, 5vw, 3rem); /* Fonte ajustável (mínimo, ideal, máximo) */
+            font-size: clamp(1.8rem, 5vw, 3rem);
             margin: 0;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
             letter-spacing: 2px;
@@ -55,13 +55,11 @@
             margin-bottom: 50px;
             width: 100%;
             max-width: 800px;
-            /* Altura será ajustada via media query */
             height: 900px; 
             display: flex; flex-direction: column; align-items: center;
             box-sizing: border-box;
         }
 
-        /* Camadas (Folhas) - Responsivas usando bordas relativas */
         .layer {
             width: 0; height: 0; position: absolute; z-index: 2;
             border-left: solid transparent; border-right: solid transparent;
@@ -69,7 +67,6 @@
             filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
         }
 
-        /* Configuração Desktop (Padrão) */
         .layer-1 { border-left-width: 150px; border-right-width: 150px; border-bottom-width: 200px; top: 0px; z-index: 5; }
         .layer-2 { border-left-width: 250px; border-right-width: 250px; border-bottom-width: 300px; top: 120px; z-index: 4; }
         .layer-3 { border-left-width: 350px; border-right-width: 350px; border-bottom-width: 400px; top: 280px; z-index: 3; }
@@ -86,10 +83,10 @@
             text-shadow: 0 0 20px yellow; z-index: 10; animation: glow 2s infinite alternate;
         }
 
-        /* --- BOLAS 3D (ORNAMENTOS) --- */
+        /* --- BOLAS --- */
         .ornament {
             position: absolute;
-            width: 55px; height: 55px; /* Tamanho Desktop */
+            width: 55px; height: 55px;
             border-radius: 50%;
             box-shadow: 4px 4px 8px rgba(0,0,0,0.7); 
             display: flex; justify-content: center; align-items: center;
@@ -102,48 +99,34 @@
         .ornament:hover { transform: scale(1.2); z-index: 20; filter: brightness(1.2); }
 
         /* --- MODAL --- */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
         .modal-content { 
             background-color: #fff; margin: 30% auto; padding: 20px; 
             border: 4px solid #c0392b; border-radius: 15px; 
-            width: 90%; /* Mais largo no celular */
-            max-width: 400px; 
+            width: 90%; max-width: 400px; 
             text-align: center; position: relative; 
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
+        .close-btn { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
 
-        /* --- MEDIA QUERIES (CELULAR) --- */
+        /* --- CELULAR --- */
         @media (max-width: 600px) {
-            .tree-wrapper {
-                height: 650px; /* Árvore mais baixa no celular */
-            }
-            
-            /* Reduzindo o tamanho das camadas proporcionalmente com VW (Viewport Width) */
-            /* Isso garante que a árvore nunca seja mais larga que a tela do celular */
+            .tree-wrapper { height: 650px; }
             .layer-1 { border-left-width: 20vw; border-right-width: 20vw; border-bottom-width: 140px; top: 0px; }
             .layer-2 { border-left-width: 30vw; border-right-width: 30vw; border-bottom-width: 210px; top: 90px; }
             .layer-3 { border-left-width: 40vw; border-right-width: 40vw; border-bottom-width: 280px; top: 200px; }
             .layer-4 { border-left-width: 48vw; border-right-width: 48vw; border-bottom-width: 300px; top: 320px; }
-            
             .trunk { bottom: 30px; width: 50px; height: 70px; }
             .star { font-size: 50px; top: -40px; }
-
-            /* Diminuindo a bola para caber na tela pequena */
-            .ornament {
-                width: 38px;
-                height: 38px;
-                font-size: 9px;
-            }
+            .ornament { width: 38px; height: 38px; font-size: 9px; }
         }
 
-        /* --- LUZES E NEVE --- */
         .light {
             position: absolute; width: 8px; height: 8px; border-radius: 50%; z-index: 6;
             box-shadow: 0 0 5px currentColor; animation: blink 1.5s infinite alternate;
         }
         @keyframes blink { 0% { opacity: 0.3; transform: scale(0.8); } 100% { opacity: 1; transform: scale(1.2); box-shadow: 0 0 15px currentColor; } }
         @keyframes glow { from { text-shadow: 0 0 10px yellow; } to { text-shadow: 0 0 30px orange; transform: scale(1.1); } }
-
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
-        .close-btn { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
         .snowflake { position: fixed; top: -10px; color: #fff; pointer-events: none; animation: fall linear infinite; z-index: 100; }
         @keyframes fall { to { transform: translateY(100vh); } }
     </style>
@@ -173,6 +156,8 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
     <script>
         // --- 1. DADOS ---
         const recipients = [];
@@ -182,33 +167,23 @@
 
         const treeContainer = document.getElementById('tree');
         
-        // --- 2. CONFIGURAÇÃO DINÂMICA (RESPONSIVA) ---
-        // Aqui está o segredo: calculamos as dimensões com base no tamanho REAL da tela
-        
+        // --- 2. CONFIGURAÇÃO RESPONSIVA ---
         function getTreeConfig() {
             const width = treeContainer.offsetWidth;
-            const height = treeContainer.offsetHeight;
-            
-            // Detecta se é celular (largura < 600) para ajustar o tamanho da bola
             const isMobile = window.innerWidth < 600;
-            const ballSize = isMobile ? 38 : 55; // Sincronizado com CSS
-
-            // Margens da árvore (onde as bolas podem ficar)
+            const ballSize = isMobile ? 38 : 55; 
             const topY = isMobile ? 60 : 90;
             const bottomY = isMobile ? 580 : 820; 
-
-            // Spread (espalhamento horizontal) baseado na largura da tela
-            // No celular (48vw * 2 = 96% da tela), no PC (360px de raio)
             const spreadX = isMobile ? (width * 0.45) : 360; 
 
             return {
                 width: width,
-                centerX: width / 2, // Centro exato do elemento
+                centerX: width / 2, 
                 topY: topY,
                 bottomY: bottomY,
                 maxSpreadX: spreadX,
                 ballSize: ballSize,
-                collisionMargin: isMobile ? 2 : 8 // Menos margem no celular para caber tudo
+                collisionMargin: isMobile ? 2 : 8 
             };
         }
 
@@ -218,26 +193,18 @@
             let safePosition = false;
             let x, y;
             let attempts = 0;
-            const maxAttempts = 3000; // Mais tentativas para o celular não travar
+            const maxAttempts = 3000; 
 
             while (!safePosition && attempts < maxAttempts) {
                 attempts++;
-                
-                // Sorteia altura Y
                 y = Math.floor(Math.random() * (config.bottomY - config.topY - config.ballSize) + config.topY + config.ballSize/2);
-                
-                // Calcula largura permitida nessa altura (Triângulo)
                 const percentDown = (y - config.topY) / (config.bottomY - config.topY);
                 const currentSpread = percentDown * config.maxSpreadX * 0.90; 
-                
-                // Sorteia X
                 const randomOffset = (Math.random() * (currentSpread * 2)) - currentSpread;
                 x = config.centerX + randomOffset;
 
-                // Checa Colisão
                 let collision = false;
                 const collisionRadius = config.ballSize + config.collisionMargin;
-                
                 for (let pos of occupiedPositions) {
                     const dx = x - pos.x;
                     const dy = y - pos.y;
@@ -246,18 +213,15 @@
                 }
                 if (!collision) safePosition = true;
             }
-            
             if (!safePosition) return { x: config.centerX, y: config.bottomY }; 
             occupiedPositions.push({x, y});
             return { x, y };
         }
 
         function generateOrnaments() {
-            // Limpa bolas antigas (caso redimensione a tela e chame a função de novo)
             const existingBalls = document.querySelectorAll('.ornament');
             existingBalls.forEach(b => b.remove());
-            occupiedPositions.length = 0; // Limpa posições
-
+            occupiedPositions.length = 0; 
             const config = getTreeConfig();
             
             const baseColors = [
@@ -266,17 +230,13 @@
                 {r: 0, g: 170, b: 40}, {r: 255, g: 110, b: 0}
             ];
             
-            // Embaralha nomes
             const shuffledRecipients = [...recipients].sort(() => Math.random() - 0.5);
 
             shuffledRecipients.forEach((person, index) => {
                 const ball = document.createElement('div');
                 ball.classList.add('ornament');
                 ball.innerText = person.name;
-                
                 const pos = getRandomTreePosition(config);
-                
-                // Centraliza baseado no tamanho da bola atual
                 ball.style.top = `${pos.y - (config.ballSize/2)}px`;
                 ball.style.left = `${pos.x - (config.ballSize/2)}px`;
 
@@ -290,25 +250,19 @@
         }
 
         function generateLights() {
-            // Remove luzes antigas se houver
             document.querySelectorAll('.light').forEach(l => l.remove());
-
             const config = getTreeConfig();
-            const totalLights = window.innerWidth < 600 ? 40 : 60; // Menos luzes no celular
-
+            const totalLights = window.innerWidth < 600 ? 40 : 60; 
             for(let i=0; i<totalLights; i++) {
                 const light = document.createElement('div');
                 light.classList.add('light');
                 const lightColors = ['red', 'yellow', 'cyan', 'lime', 'magenta', '#fff'];
                 light.style.color = lightColors[Math.floor(Math.random() * lightColors.length)];
                 light.style.backgroundColor = light.style.color;
-                
                 const y = Math.floor(Math.random() * (config.bottomY - config.topY) + config.topY);
                 const percentDown = (y - config.topY) / (config.bottomY - config.topY);
                 const spread = percentDown * config.maxSpreadX * 0.9;
-                
                 const x = config.centerX + (Math.random() * spread * 2 - spread);
-
                 light.style.top = `${y}px`;
                 light.style.left = `${x}px`;
                 light.style.animationDuration = (Math.random() * 1.5 + 0.5) + 's';
@@ -317,11 +271,54 @@
             }
         }
 
-        // --- MODAL ---
+        // --- MODAL & CONFETES ---
         const modal = document.getElementById('messageModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalMessage = document.getElementById('modalMessage');
-        function openModal(name, message) { modalTitle.innerText = `Para: ${name}`; modalMessage.innerText = message; modal.style.display = "block"; }
+
+        function openModal(name, message) { 
+            modalTitle.innerText = `Para: ${name}`; 
+            modalMessage.innerText = message; 
+            modal.style.display = "block"; 
+            
+            // --- DISPARAR CONFETES ---
+            triggerConfetti();
+        }
+
+        function triggerConfetti() {
+            // Duração do efeito (2 segundos)
+            var duration = 2 * 1000;
+            var animationEnd = Date.now() + duration;
+            var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 2000 };
+
+            var randomInRange = (min, max) => Math.random() * (max - min) + min;
+
+            var interval = setInterval(function() {
+                var timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                var particleCount = 50 * (timeLeft / duration);
+                
+                // Cores do Natal: Vermelho, Verde, Dourado, Branco
+                const christmasColors = ['#bb0000', '#009900', '#ffd700', '#ffffff'];
+
+                // Confetes saindo de dois pontos (esquerda e direita da modal aproximadamente)
+                confetti(Object.assign({}, defaults, { 
+                    particleCount, 
+                    colors: christmasColors,
+                    origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } 
+                }));
+                confetti(Object.assign({}, defaults, { 
+                    particleCount, 
+                    colors: christmasColors,
+                    origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } 
+                }));
+            }, 250);
+        }
+
         function closeModal() { modal.style.display = "none"; }
         window.onclick = function(e) { if (e.target == modal) closeModal(); }
 
@@ -340,20 +337,17 @@
         }
         setInterval(createSnowflake, 150);
 
-        // --- INICIALIZAÇÃO E RESIZE ---
         generateLights();
         generateOrnaments();
 
-        // Recalcular se a pessoa virar a tela do celular
         let resizeTimer;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
                 generateLights();
                 generateOrnaments();
-            }, 200); // Espera 200ms após terminar de redimensionar para não travar
+            }, 200);
         });
-
     </script>
 </body>
 </html>
