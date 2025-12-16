@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Amigo Oculto - GEPES</title>
+    <title>Amigo Secreto da Gratidão</title>
     <style>
         /* --- CONFIGURAÇÕES GERAIS --- */
         body {
@@ -109,7 +109,7 @@
         }
         .close-btn { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
 
-        /* --- CELULAR --- */
+        
         @media (max-width: 600px) {
             .tree-wrapper { height: 650px; }
             .layer-1 { border-left-width: 20vw; border-right-width: 20vw; border-bottom-width: 140px; top: 0px; }
@@ -136,13 +136,13 @@
 
     <div class="header-container">
         <h1>GEPES ATENDIMENTO</h1>
-        <h3>AMIGO OCULTO</h3>
+        <h3>Amigo Secreto da Gratidão</h3>
     </div>
 
     <div class="tree-wrapper" id="tree">
         <div class="star">★</div>
         <div class="layer layer-1"></div>
-        <div class="layer layer-2"></div>
+        <div class="layer layer-2"></di32v>
         <div class="layer layer-3"></div>
         <div class="layer layer-4"></div>
         <div class="trunk"></div>
@@ -160,15 +160,179 @@
 
     <script>
         // --- 1. DADOS ---
-        const recipients = [];
-        for (let i = 1; i <= 54; i++) {
-            recipients.push({ name: `Nome ${i}`, message: `Feliz Natal para o colega número ${i}!` });
-        }
+
+const recipients = [{
+    name: 'Allana',
+    message: 'Allana, você é uma pessoa cheia de alegria, dança com uma energia incrível e demonstra muita competência em tudo que faz! É um prazer ter você por perto!'
+  }, {
+    name: 'Ana Carla',
+    message: 'Ana Carla, hoje quero dedicar algumas palavras para reconhecer quem você é: uma mulher extraordinária, forte e guerreira, que enfrenta cada desafio com coragem e determinação. Como profissional, você é uma inspiração. Sua dedicação e competência não apenas elevam o padrão, mas também motivam todos ao seu redor a serem melhores. Admiro sua capacidade de transformar obstáculos em oportunidades e sua presença que ilumina qualquer ambiente. Continue sendo essa força da natureza, que inspira, ensina e contagia com sua energia e com seu sorriso. É um privilégio ter você por perto!'
+  }, {
+    name: 'Ana Paula',
+    message: 'Ana Paula, mesmo com pouco contato, sempre ouvi ótimos comentários sobre sua simpatia e a forma como se conecta com as pessoas. Tenho certeza de que você desempenha um papel especial na equipe e que você continue sendo essa presença que faz diferença no dia a dia!'
+  }, {
+    name: 'Ana Rosa',
+    message: 'Ana Rosa, obrigada por ser tão verdadeira, se entregar completamente e demonstrar o ser humano incrível que você é! Continue agitando a equipe Bora Conversar. Que bom trabalhar com você.'
+  }, {
+    name: 'Ana Sá',
+    message: 'Ana, tua sensibilidade e tua voz suave e acolhedora ajudaram vários colegas ao longo de 2025. Foi esse teu jeito especial que te levou para o novo desafio em uma nova equipe. A mistura nordestina e mineira traz o melhor de cada lugar na tua maneira de ser e agir. E por tudo isso é muito bom ter você conosco. Obrigado pela dedicação ao trabalho, pelas soluções que você correu atrás para ajudar os funcionários, pela atitude colaborativa com os colegas, pela coragem de enfrentar um novo desafio e pela parceria de sempre. Um grande abraço, um feliz natal e que 2026 seja um ano espetacular!'
+  }, {
+    name: 'Arilene',
+    message: 'Querida Arilene, até então não tivemos muitas oportunidades de interação e convivência, mas tenho absoluta certeza de que posso e devo reconhecer sua dedicação e empenho nos atendimentos realizados a nossos colegas e sua atuação sempre profissional e colaborativa no trabalho em equipe. Quero agradecer por estar sempre disposta a ajudar e fazer diferença no nosso time! Que em 2026 todos os seus passos te guiem para o que te fará feliz de verdade!! Um Feliz Natal e um ano novo repleto de muitas vitórias, para ti e a todos que ama!!'
+  }, {
+    name: 'Arlene',
+    message: 'Arlene: Minha colega e amiga, mulher forte, nordestina corajosa, determinada e inteligente. Uma profissional sempre preocupada em atender os colegas da melhor forma possível. Obrigada por seu apoio sempre que necessário, e até mesmo por não deixar os amigos dormindo na rua. Sua generosidade e companheirismo fazem toda a diferença!'
+  }, {
+    name: 'Carlão',
+    message: 'Grande Carlão! Você é a força que impulsiona a transformação na Gepes Atendimento, guiando-nos com inovação e excelência. Parabéns por liderar essa jornada com novas ferramentas e uma visão que inspira! Seu carisma e gentileza, soam como notas de um saxofone que preenchem cada canto da Gepes, nos lembram do essencial: somos humanos, gente cuidando de gente.'
+  }, {
+    name: 'Crisleine',
+    message: 'Cris, foi um prazer te conhecer pessoalmente no nosso encontro de Aniversário da Gepes e tive uma grata surpresa! Você é uma pessoa alegre, cheia de energia e isso contagia quem está a seu redor. No trabalho, atua de forma colaborativa com a equipe. Tem atenção e empatia nos atendimentos com nossos clientes. Deu para perceber que você “é gente que gosta muito de Gente!” Sua dedicação faz toda a diferença!! Desejo que tudo de melhor aconteça para você! Um forte abraço!'
+  }, {
+    name: 'Daiana',
+    message: 'Daiana, um verdadeiro exemplo de profissional, que valoriza suas origens e tem orgulho delas. Sua aparência reflete versatilidade e autenticidade. Confesso que imaginava que fosse mais baixa, mas me surpreendi: é uma pessoa alta! Além disso, transmite uma alegria contagiante e tem um senso de humor incrível. Quando a conheci pessoalmente, senti uma conexão imediata e muito acolhimento.'
+  }, {
+    name: 'Debora C.',
+    message: 'Débora Sempre demonstrou muito carinho, respeito, atenção e cuidado tanto com os colegas de equipe, do prefixo e aqueles funcis que nos procurar em busca de ajuda e orientações. Seu atendimento é exemplar e inspirador pela disponibilidade e compartilhamento. Foi um imenso prazer poder aprender com você e usufruir da sua generosidade em transmitir saberes. Agradeço sinceramente por tudo'
+  }, {
+    name: 'Debora M.',
+    message: 'Querida Débora Molas que alegria ter você conosco! Sua chegada foi como aquele tempero secreto que faltava na receita da nossa turma — agora tudo ficou mais saboroso! Em tão pouco tempo, você já mostrou que além de competência, tem simpatia e uma energia que contagia. Que este seja apenas o começo de uma jornada incrível, cheia de aprendizados, conquistas e boas risadas ao nosso lado. Obrigada por somar com tanto carinho e dedicação — você já faz parte da nossa história! Continue sendo essa pessoa inspiradora que ilumina os caminhos por onde passa. Com gratidão e carinho… seu amigo muito secreto'
+  }, {
+    name: 'Diego',
+    message: 'Diego, você é tipo Bluetooth: conecta todo mundo e ainda faz tudo parecer simples, desbloqueando conquistas que ninguém imaginava. Posso lhe relacionar, também, como Wi-Fi: quando estão por perto, tudo funciona melhor. Obrigado por manter o sinal forte e a senha sempre no modo ‘inspiração’! Que sua liderança continue sendo 5G, sem travar nem cair!'
+  }, {
+    name: 'Elisa',
+    message: 'Elisa, hoje quero te celebrar não apenas como amiga secreta, mas como símbolo de força e inspiração. Tua trajetória marcada pela luta política e pela dedicação ao sindicato dos bancários revela uma coragem rara: a de quem não se cala diante das injustiças e acredita que a união pode transformar realidades. É inteligente, firme e guerreira, uma voz que ecoa esperança e que nos lembra que cada conquista nasce da persistência. Que esta mensagem seja um tributo à tua essência combativa e ao coração generoso que guia teus passos. Que nunca te falte energia para continuar defendendo aquilo em que acredita, e que a vida te retribua com vitórias, alegrias e reconhecimento. Com admiração e gratidão, Seu Amigo Secreto 🌟'
+  }, {
+    name: 'Fabia',
+    message: 'Fábia, você é uma pessoa que sabe, em pouquíssimas palavras, emocionar mais do que quem precisa de um livro para fazê-lo.'
+  }, {
+    name: 'Fabiano',
+    message: 'Fabiano, sua habilidade de ouvir com atenção e acolher os colegas é algo raro e valioso. Essa escuta ativa que você prática não apenas fortalece os laços entre todos nós, mas também cria um ambiente de confiança e colaboração.'
+  }, {
+    name: 'Fellipe',
+    message: 'Fellipe, você é exemplo de como propósito e leveza podem caminhar juntos. Em cada desafio, você transforma situações complexas em oportunidades de confiança e aprendizado. Que sua jornada continue sendo marcada por conquistas, viagens que ampliam horizontes e conexões que deixam marcas positivas por onde você passa. Continue sendo essa presença que faz diferença e inspira todos ao redor!'
+  }, {
+    name: 'Fernanda F.',
+    message: 'Olá, Fernanda! Gratidão pela fantástica atuação na Ecoa 8910 ao longo de 2025. Apesar de ser um trabalho voluntário, você foi inovadora, empática e não mediu esforços para fazer um trabalho de excelência em prol das pessoas, contribuindo ativamente para um ambiente saudável e harmônico.'
+  }, {
+    name: 'Fernanda M.',
+    message: 'Fernanda, muito obrigado por existir! Sua dedicação e empenho fazem a diferença na vida de muitas pessoas. É um privilégio ter você ao lado nessa jornada. Que este Natal seja cheio de alegria e que o Ano Novo traga muitas realizações e momentos felizes. Gratidão!!!'
+  }, {
+    name: 'Flávya',
+    message: 'Flavya, esse seu jeito sério desperta um mistério e pode até nos enganar num primeiro contato. Você é uma mulher cheia de estilo e uma mãe incrível. Conviver contigo é especial, porque sempre que precisamos, você não hesita em mostrar o seu coração gigante. Admiro a sua curiosidade ao mundo do outro e aprecio demais nossas elucubrações sobre a vida, que nunca acabam. Será que você vai adivinhar quem sou eu?'
+  }, {
+    name: 'Gambá',
+    message: 'Gambá, muito feliz por ter você conosco na Gepes, além de divertido é muito competente e acessível. Parabéns e obrigada por agregar!'
+  }, {
+    name: 'Giani',
+    message: 'Gi, valeu demais por sempre estar pronta para ajudar! Sua espontaneidade e carisma fazem toda a diferença no clima da equipe. Com esse jeitinho único, você deixa tudo mais leve e divertido. Obrigado Carminha!'
+  }, {
+    name: 'Gisa',
+    message: 'Gisa, quero expressar gratidão pelo seu trabalho e pela forma como você contribui para o nosso ambiente. Sua proatividade, comprometimento e dinamismo são inspiradores e fazem a diferença no dia a dia. A maneira como você valoriza a empatia e o respeito mútuo, sempre buscando aprender com os outros e compartilhar suas vivências, demonstra não apenas competência, mas também humanidade. Seu cuidado com as pessoas é uma virtude rara e essencial, e isso se reflete na harmonia que você espalha e no engajamento que promove entre todos. Sua presença é um exemplo de como atitudes positivas transformam equipes. Parabéns pelo excelente trabalho e continue sendo essa pessoa incrível que inspira todos ao redor!'
+  }, {
+    name: 'Gustavo F.',
+    message: 'Gustavo, você é uma pessoa muito especial. Gentil, dedicado, esperto, disponível, parceiro para todas as horas. Dono do topete mais elegante da gestão de pessoas! E olha que tem grandes concorrentes! Quero que saiba que te admiro demais e só ouço elogios a você, de diversas fontes. Desejo um final de ano com muito amor, saúde e luz a você e sua família! E que o novo ano traga sonhos realizados e alegrias! Sou muito feliz por nossas histórias terem se cruzado. Obrigada!'
+  }, {
+    name: 'Jéssica',
+    message: 'Jéssica, ao encerrarmos 2025, quero expressar minha sincera gratidão pelo seu desempenho excepcional. Sua dedicação e competência foram fundamentais para os resultados alcançados. Também não poderia deixar de agradecer por ter você na minha vida. Sua amizade é um presente que torna tudo mais leve e especial. Que 2026 seja repleto de alegrias, saúde e momentos inesquecíveis para nós! Feliz Ano Novo!'
+  }, {
+    name: 'João V.',
+    message: 'Oi menino do computador! Muito obrigada por compartilhar seus conhecimentos e experiências com a equipe e por sua permanente disponibilidade para ajudar! Você faz a diferença no nosso dia a dia.'
+  }, {
+    name: 'Josias',
+    message: 'Josias, sua luz e alegria contagiam! Você é daquelas pessoas que não conseguimos ficar de mau humor quando está por perto, ainda que virtualmente. A sua forma de enxergar o mundo nos lembra que gentileza e bom humor são forças poderosas. Que nunca falte essa energia que ilumina os caminhos e aquece os corações! Continue espalhando sorrisos e boas vibrações, porque o mundo precisa exatamente disso. 🌟'
+  }, {
+    name: 'Karla',
+    message: 'Olha só quem caiu na minha lista, Karla!!! Foi um prazer ter você como minha amiga secreta! Mesmo conhecendo pouco, já deu para perceber sua liderança e dedicação à equipe. Espero que este presente seja tão útil quanto os feedbacks da sua equipe nos testes do sistema (e sem bugs, prometo!). Que 2026 venha com mais motivos para comemorar. Feliz amigo secreto!'
+  }, {
+    name: 'Léo',
+    message: 'Grande Léo, não tivemos muito contato, mas pelo pouco que conheço vejo em você uma pessoa humana e um profissional dedicado. Representante do Nordeste, região a qual admiro muito. Parabéns pela dedicação ao trabalho e pelo brilho nos olhos. Desejo sucesso e felicidades em sua jornada!'
+  }, {
+    name: 'Líbia',
+    message: 'Gostaria de reconhecer a Líbia como uma profissional exemplar, além de ser um doce de pessoa, é muito assertiva concisa e emana ótimas energias em cada contato. Suas atuações são inspiradoras, o que nos motiva a sermos cada dia melhores.'
+  }, {
+    name: 'Louise',
+    message: 'Louise, você faz o trabalho fluir com leveza, fazendo a diferença no time. Feliz Amigo Secreto!'
+  }, {
+    name: 'Luciana',
+    message: 'Luciana, Apesar de interagirmos pouco, quero reconhecer algo especial em você: sua doçura e simpatia iluminam qualquer ambiente. Que essa luz continue brilhando e inspirando todos ao seu redor! Que seu natal e ano novo ano sejam repletos de alegrias, conquistas e momentos tão encantadores quanto o que você transmite.'
+  }, {
+    name: 'Lufe',
+    message: 'Lufe, mesmo não trabalhando tão perto, quero aproveitar este momento para expressar minha gratidão. 2025 foi um ano de muitos desafios e conquistas, e sei que cada equipe teve um papel essencial para que tudo desse certo. A sua dedicação e contribuição fizeram diferença para o todo, e isso merece ser reconhecido! Que 2026 traga ainda mais oportunidades, aprendizados e realizações para você. Obrigado por fazer parte dessa grande engrenagem que move nossos resultados!'
+  }, {
+    name: 'Luis Fer',
+    message: 'À nossa IA humana, também conhecido com Luis Fernando! Se o mundo tivesse um Upside Down, você seria a luz que guia todos nós para fora da escuridão. Sua alegria e bom humor são como as luzes da casa da Joyce — sempre nos mostrando o caminho certo, mesmo nos momentos mais desafiadores. Sua inteligência e comprometimento são tão poderosos quanto os dons da Eleven: você enfrenta qualquer Demogorgon de problemas com coragem e criatividade. Além disso, sua parceria e colaboração fazem com que trabalhar ao seu lado seja como estar no grupo dos heróis de Hawkins — unidos, fortes e prontos para qualquer aventura. Gratidão por ser essa pessoa incrível que transforma tudo ao redor. Que sua jornada continue cheia de descobertas e vitórias, sem precisar entrar no Mundo Invertido para isso, ok! Você é extraordinário, Luis!'
+  }, {
+    name: 'Luiz Cláudio',
+    message: 'Luiz Cláudio, pessoa simpática, mineiro gente boa!!! Feliz em tirá-lo no amigo secreto, sucesso pra ti Brother nessa jornada e que 2026 seja repleto de realizações em seu caminho!!! Absss'
+  }, {
+    name: 'Marcela',
+    message: 'Marcela, Mesmo sem termos tido muito tempo juntas, quero aproveitar para dizer que é incrível saber que pessoas como você fazem parte do nosso time. Que este momento seja um lembrete do quanto cada presença é única e especial. Desejo que seus dias sejam leves, cheios de boas surpresas e conquistas que façam seus olhos brilharem. Que a gente possa compartilhar muitos sorrisos e boas histórias daqui pra frente. Receba este presente como um gesto de carinho e reconhecimento por tudo que você é e ainda vai mostrar! Com carinho, Seu Amigo Secreto ✨'
+  }, {
+    name: 'Marcelo',
+    message: 'Marcelo, Você chegou tímido, mas foi conquistando todos com sua proatividade e espírito colaborativo! Você transmite tranquilidade, mesmo quando está com um atendimento desafiador, demonstrando comprometimento e leveza nos atendimentos! Gratidão por ter você como colega na equipe e pelas dicas de celular (hehehe)!'
+  }, {
+    name: 'Michael',
+    message: 'Michael, você é daqueles colegas que fazem toda a diferença no time! Sempre presente, parceiro e disposto a ajudar, seja nas tarefas do dia a dia ou nas ações voluntárias da Ecoa, você mostra que trabalho em equipe vai muito além da rotina. É inspirador ver sua energia e boa vontade em tudo que faz. Obrigado por ser esse cara gente boa, que soma, motiva e contagia com seu jeito positivo. Que este Natal seja cheio de alegria e que o Ano Novo traga muitas conquistas, saúde e momentos incríveis!!!'
+  }, {
+    name: 'Milena',
+    message: 'Milena, foi muito legal ter você no hackathon! A troca de ideias naquele momento mostrou o quanto você manda bem em transformar desafios em soluções práticas. E não dá para deixar de mencionar como seu trabalho com automações, relatórios e chatbot facilita nossa vida todos os dias. Mesmo sem muito contato, dá para sentir o impacto positivo que você gera na equipe. Valeu por fazer a tecnologia trabalhar a nosso favor!'
+  }, {
+    name: 'Oman',
+    message: 'Oman, você é o cara! Sou grata pela oportunidade de trabalhar com você dentro dessa equipe tão diversa e rica. Agradeço e admiro muito sua generosidade em partilhar descobertas, caminhos e sabedoria! FELIZ ANO NOVO!'
+  }, {
+    name: 'Paulo Gus.',
+    message: 'Voz calma, semblante sereno, olhar genuíno. Descolado, versátil, simples. Essa é uma descrição inicial do nosso querido Paulo Gustavo, mas tem muito mais. Um cara íntegro, generoso, respeitoso, de valores e posturas que me identifico muito e admiro. No âmbito pessoal, é um camaleão: É entusiasta de natureza e agrofloresta, multiartista (como poucos que vi), devotado à família. Profissionalmente falando, um gigante! Desenvolve trabalhos primorosos, com muita criatividade, inovação e qualidade. Enfim, tantos predicados, tantas qualidades, que não dá para descrever em meras palavras. Gustavo, um dos presentes que recebi neste último ano, foi o privilégio de trabalhar contigo! Aprendo muito com você, principalmente nas sutilezas. Desejo do fundo do meu coração que você tenha uma vida plena e feliz, que se realize em tudo o que fizer. É um privilégio conviver contigo! Um abraço fraterno!'
+  }, {
+    name: 'Pedro',
+    message: 'Pedro, seu carisma, profissionalismo, dedicação e colaboração é essencial para o sucesso da nossa Gepes Atendimento! Gratidão, amigo BB!'
+  }, {
+    name: 'Priscila',
+    message: 'Priscila Nos conhecemos há muitos anos e queria te dizer que, independentemente do papel, é muito bom contar com você! Agradeço a confiança neste 2025 e todo o apoio que não só eu, mas minha equipe, mesmo de longe - mas tão perto - recebeu de você. Que você continue orientando, cativando, abrindo caminhos e seguindo firme nos desafios que aparecem. Que seu 2026 seja de paz, de alegrias, com muitos momentos em família e ainda mais gratificante!'
+  }, {
+    name: 'Rafael F.',
+    message: 'Rafael Fiedler é uma honra trabalhar com você. Você transmite uma energia boa, é engraçado, competente e muito eficiente. Tudo que se propõe a fazer faz com excelência e torna nosso ambiente de trabalho mais leve e mais DOCE. Receba todo meu carinho e admiração!'
+  }, {
+    name: 'Rafael P.',
+    message: 'Rafa Pantuzo Quero te agradecer por ser essa pessoa incrível, amiga, parceira e que está sempre disposto a ajudar. Sua postura sempre prestativa faz toda a diferença em qualquer lugar que você esteja. Me lembro do meu primeiro dia na Gepes, em que você me acolheu e desde então tem sempre estado ao meu lado. Valeu demais! Obrigada por ser essa pessoa tão especial!'
+  }, {
+    name: 'Raquel',
+    message: 'Raquel Fiquei muito feliz em ter você como minha amiga secreta! Nossa conexão se iniciou lá no início da Gepes Atendimento, quando fizemos o treinamento e várias dinâmicas na mesma equipe e onde você deu um spoiler sobre seus conhecimentos de T.I., rsrs. De lá pra cá, foram muitas trocas e aprendizados, até que finalmente te conheci pessoalmente no nosso aniversário de 1 ano de Gepes! Parabéns pelo seu talento na condução dos atendimentos, sempre em busca de soluções tempestivas e de qualidade para atender às expectativas de nossos clientes! Feliz Natal e um 2025 próspero e repleto de alegrias e realizações proveitosas! Vamos continuar essa parceria também em 2026! Beijos!'
+  }, {
+    name: 'Raul',
+    message: 'Raul, neste nosso pequeno ritual de troca e carinho, quero te deixar algumas palavras que vêm do coração. Tua presença tranquila e teu jeito profissional, sempre disposto a ajudar, fazem do dia a dia um lugar mais leve. Cada dúvida que tirei contigo veio acompanhada de boa vontade, paciência e esse sorriso que parece um abraço - capaz de trazer calma até nos dias mais turbulentos. Que esta nova fase da tua vida, com a chegada do teu filho, seja repleta de bênçãos, descobertas e alegrias profundas. Não tenho dúvida de que tua serenidade e teu modo acolhedor te tornam um pai naturalmente inspirador. Que a vida te devolva em dobro toda luz que você espalha por aí. Com carinho e boas vibrações, Teu amigo secreto'
+  }, {
+    name: 'Renata',
+    message: 'Renata, quero expressar minha gratidão por você ser uma referência de cuidado e escuta genuína. É perceptível o quanto a sua forma de liderar, sempre colocando o aspecto humano no centro, inspira todos ao redor e transforma o ambiente em um espaço de confiança e acolhimento. Obrigado por mostrar que resultados e relações verdadeiras acontecem quando há empatia e respeito. Continue sendo essa força que valoriza pessoas e faz a diferença todos os dias!'
+  }, {
+    name: 'Rodrigo',
+    message: 'Meu amigo secreto da gratidão é um mineirinho, que fez sua carreira entre Minas e DF. Ainda nos conhecemos bem pouco, mas pelo que pude pesquisar é visto por outros colegas do Banco como prestativo, colaborativo e muito comprometido ao que se dedica. Por isso, Rodrigo Sales, sou grata por ter pessoas como você na nossa equipe da Gepes Atendimento. Obrigada por estar disponível, sempre disposto a ajudar e por ser uma fonte de apoio constante. Sua dedicação ao nosso trabalho e propósito é um presente e serve de inspiração para os demais. Nossa equipe é mais rica e cheia de vida com a sua presença e agradeço pelos muitos momentos que ainda vamos compartilhar!'
+  }, {
+    name: 'Roney',
+    message: 'Roney, você é aquele parceiro que todo mundo gosta de ter por perto! Sua capacidade de fazer as coisas acontecerem é essencial para o nosso trabalho — você é prático, ágil, preciso e está sempre disposto a encontrar soluções para apoiar os colegas. O que realmente te diferencia é o seu jeito humano e colaborativo: com você não existe tempo ruim. Você lida muito bem com a pressão, encara os desafios de frente, é resiliente e está sempre de bom humor, transmitindo leveza e confiança. Além de ser um profissional exemplar, você é um cara superfamília — um pai dedicado e presente, que inspira pelo equilíbrio entre vida pessoal e profissional. Essa postura mostra que sucesso não se resume a resultados, mas também a valores. Obrigada por ser essa referência de parceria, empatia e comprometimento. Trabalhar com você é aprender todos os dias e valorizar o processo. Continue sendo essa pessoa incrível que faz a diferença por onde passa!'
+  }, {
+    name: 'Sabrina',
+    message: 'Sabrina, você chegou há pouco tempo à equipe, mas já demonstra claramente sua dedicação e atenção com todos. Transmite calma e, com carinho e empatia, torna cada interação especial. É nítida a sua postura acolhedora, que faz toda a diferença, trazendo leveza e confiança para toda a equipe. Desejo que este Natal seja cheio de luz, alegria e momentos especiais, e que o Ano Novo venha repleto de conquistas, saúde e felicidade.'
+  }, {
+    name: 'Sheila',
+    message: 'Gostaria de expressar minha profunda admiração e gratidão pelo seu trabalho Sheila. Sua liderança é inspiradora, sempre pautada pela empatia, clareza e dedicação. A forma como conduz a equipe, incentivando o crescimento e criando um ambiente colaborativo, faz toda a diferença no nosso dia a dia. Obrigado por ser um exemplo de profissionalismo e humanidade!!'
+  }, {
+    name: 'Silvana',
+    message: 'Silvana, eu sou grata pela sua luz e alegria. Você me inspira a ser uma pessoa que se diverte com a vida em todos os momentos, sejam eles cômicos ou trágicos, leves ou pesados, floridos ou secos. Pois o que realmente importa é o caminho, e não somente a linha de chegada. E essa maratona que é a vida quem escolhe como aproveitá-la é quem a vive. É um prazer compartilhar um pouquinho da minha jornada junto com a sua. Conte comigo hoje e sempre.'
+  }, {
+    name: 'Vinícius',
+    message: 'Bonitão, também conhecido como Vinícius! Para o mais bonitão de todas as Gepes da Galáxia, obrigado por trazer boas vibrações, alegria e empolgação a cada chegada - você agrega muito para o nosso excelente clima de trabalho. Admiro o Vini profissional que cuida, escuta e apoia nossos colegas, e admiro também o Vini divertido, fitness, paizão e ótimo ser humano. Gratidão, que seu 2026 seja incrível!'
+  }, {
+    name: 'Vitor',
+    message: 'Vitor, seu trabalho tem sido de grande importância para a nossa Gepes. Pensar e criar soluções que facilitem o trabalho de todos transforma a vida de todas as pessoas. Agradeço o seu comprometimento e dedicação. É uma honra ter você em nossa equipe.'
+  }];
+
+
 
         const treeContainer = document.getElementById('tree');
         
-        // --- 2. CONFIGURAÇÃO RESPONSIVA ---
-        function getTreeConfig() {
+            function getTreeConfig() {
             const width = treeContainer.offsetWidth;
             const isMobile = window.innerWidth < 600;
             const ballSize = isMobile ? 38 : 55; 
@@ -271,7 +435,7 @@
             }
         }
 
-        // --- MODAL & CONFETES ---
+    
         const modal = document.getElementById('messageModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalMessage = document.getElementById('modalMessage');
@@ -281,7 +445,7 @@
             modalMessage.innerText = message; 
             modal.style.display = "block"; 
             
-            // --- DISPARAR CONFETES ---
+        
             triggerConfetti();
         }
 
@@ -305,7 +469,7 @@
                 // Cores do Natal: Vermelho, Verde, Dourado, Branco
                 const christmasColors = ['#bb0000', '#009900', '#ffd700', '#ffffff'];
 
-                // Confetes saindo de dois pontos (esquerda e direita da modal aproximadamente)
+                // Confetes saindo de dois pontos 
                 confetti(Object.assign({}, defaults, { 
                     particleCount, 
                     colors: christmasColors,
@@ -322,7 +486,6 @@
         function closeModal() { modal.style.display = "none"; }
         window.onclick = function(e) { if (e.target == modal) closeModal(); }
 
-        // --- NEVE ---
         function createSnowflake() {
             const snowContainer = document.getElementById('snow-container');
             const flake = document.createElement('div');
